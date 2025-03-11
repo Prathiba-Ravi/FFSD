@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Communication</title>
+    <link rel="stylesheet" href="customerCommunication.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="customerCommunication.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-brand">
+            <img src="logo2.jpg.png" alt="Logo" class="logo">
+            <span class="brand">AutoCustomizer</span>
+        </div>
+        <a href="#" class="menu-btn" onclick="toggleSidebar()">☰</a>
+        <div class="nav-links" id="navLinks">
+            <a href="dashboardService.html">Dashboard</a>
+            <a href="profileSettings.html">Profile Settings</a>
+            <a href="bookingManagement.html">Booking Management</a>
+            <a href="customerCommunication.html" class="active">Customer Communication</a>
+            <a href="earnings.html">Earnings & Payouts</a>
+            <a href="reviews.html">Reviews & Ratings</a>
+        </div>
+    </nav>
+
+    <div class="sidebar" id="sidebar">
+        <a href="dashboardService.html"><i class="fas fa-tachometer-alt"></i></a>
+        <a href="profileSettings.html"><i class="fas fa-user-cog"></i></a>
+        <a href="bookingManagement.html"><i class="fas fa-calendar-alt"></i></a>
+        <a href="customerCommunication.html" class="active"><i class="fas fa-comments"></i></a>
+        <a href="earnings.html"><i class="fas fa-money-bill-wave"></i></a>
+        <a href="reviews.html"><i class="fas fa-star"></i></a>
+    </div>
+
+    <div class="communication-container">
+        <!-- Customer List Sidebar -->
+        <div class="customer-list">
+            <h3>Customers</h3>
+            <div class="customer-item" onclick="openChat('1', 'Rohith')">
+                <img src="customer.jpg" alt="Customer Avatar" class="customer-avatar">
+                <div class="customer-details">
+                    <span class="customer-name">Rohith</span>
+                    <span class="customer-id">ID: 12345</span>
+                    <span class="notification">New Message</span>
+                </div>
+            </div>
+            <div class="customer-item" onclick="openChat('2', 'Siva')">
+                <img src="customer.jpg" alt="Customer Avatar" class="customer-avatar">
+                <div class="customer-details">
+                    <span class="customer-name">Siva</span>
+                    <span class="customer-id">ID: 67890</span>
+                </div>
+            </div>
+            <!-- Add more customers here -->
+        </div>
+
+        <!-- Chat Window -->
+        <div class="chat-window" id="chatWindow">
+            <!-- Provider Profile Section -->
+            <div class="provider-profile">
+                <img src="image5.jpg" alt="Provider Avatar" class="provider-avatar">
+                <div class="provider-details">
+                    <span class="provider-name">Service Provider</span>
+                    <span class="provider-status">Online</span>
+                </div>
+            </div>
+
+            <div class="chat-header">
+                <h2>Chat with <span id="customerName">Customer</span></h2>
+                <span class="customer-id">ID: <span id="customerId">N/A</span></span>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <!-- Messages will be dynamically added here -->
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chatInput" placeholder="Type your message...">
+                <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
